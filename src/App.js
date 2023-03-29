@@ -74,8 +74,12 @@ export default function App() {
         />
         <div className="row justify-content-center by">
           <p id="by">
-            This project was coded by Mira Vyslovukh and is open-sourced on
-            GitHub and hosted on Netlify
+            This project was coded by Mira Vyslovukh and is open-sourced on{" "}
+            <a href="https://github.com/MiraVyslovukh/weather-app-react-homework">
+              Github
+            </a>{" "}
+            and hosted on{" "}
+            <a href="https://zingy-chimera-4365ca.netlify.app">Netlify</a>
           </p>
         </div>
       </div>
