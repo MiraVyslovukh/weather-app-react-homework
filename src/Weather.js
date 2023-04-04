@@ -4,7 +4,7 @@ import "./App.css";
 export default function Weather(props) {
   if (props.loaded)
     return (
-      <>
+      <div className="Weather">
         <div className="row justify-content-center">
           <div className="col my-col mt-4">
             <img
@@ -56,6 +56,6 @@ export default function Weather(props) {
           <div className="col my-col">28°C</div>
           <div className="col my-col">22°C</div>
         </div>
-      </>
+      </div>
     );
 }
