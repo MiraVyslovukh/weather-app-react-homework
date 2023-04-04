@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Engine from "./Engine";
-import axios from "axios";
 
 export default function App() {
   return (
-    <>
+    <div className="App">
       <Engine />
       <div className="row justify-content-center by">
-        <p id="by">
+        <footer id="by">
           This project was coded by Mira Vyslovukh and is open-sourced on{" "}
           <a
             href="https://github.com/MiraVyslovukh/weather-app-react-homework"
@@ -20,8 +19,8 @@ export default function App() {
           <a href="https://zingy-chimera-4365ca.netlify.app" target="_blank">
             Netlify
           </a>
-        </p>
+        </footer>
       </div>
-    </>
+    </div>
   );
 }
