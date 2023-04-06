@@ -1,0 +1,30 @@
+.Weather ul {
+  list-style: none;
+  text-align: left;
+}
+
+.Weather li {
+  font-size: 12px;
+}
+
+.Weather img {
+  width: 100px;
+}
+
+.Weather .message {
+  padding-left: 10px;
+}
+
+.Weather h3 {
+  font-size: 19px;
+  margin: 10px 10px 0px 20px;
+}
+
+.Weather h5 {
+  font-size: 13px;
+  margin: 0px 10px 0px 20px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
