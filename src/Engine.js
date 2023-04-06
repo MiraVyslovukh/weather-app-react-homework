@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Weather from "./Weather";
+import "./Engine.css";
 import axios from "axios";
 
-export default function Engine() {
-  const [city, setCity] = useState("");
+export default function Engine(props) {
+  const [city, setCity] = useState("props.defaultCity");
   const [loaded, setLoaded] = useState(false);
   const [temperature, setTemperature] = useState(null);
   const [description, setDescription] = useState("");
@@ -39,30 +40,22 @@ export default function Engine() {
         crossOrigin="anonymous"
       />
       <div className="container my-container">
-        <div className="row justify-content-evenly">
-          <div className="col my-col day mt-5 day">Sunday</div>
-          <div className="col my-col mt-5 time">Current time</div>
-          <div className="col my-col mt-5 city">City</div>
-        </div>
-        <div className="row justify-content-evenly">
-          <div className="col my-col temperature">21°C</div>
-          <div className="col my-col current-time">10:30</div>
-          <div className="col my-col city-name">Lviv</div>
-        </div>
         <div className="row justify-content-center">
-          <div className="col my-col mt-5">
+          <div className="col my-col mt-2">
             <form onSubmit={handleSubmit}>
               <input
                 onChange={getCity}
                 type="search"
                 className="search-engine"
                 placeholder="Type a city..."
+                autoFocus="on"
               />
               <button type="submit">Search</button>
             </form>
           </div>
         </div>
         <Weather
+          defaultCity="Lviv"
           city={city}
           temperature={temperature}
           description={description}
