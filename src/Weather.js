@@ -1,60 +1,40 @@
 import React from "react";
-import "./App.css";
+import "./Weather.css";
 
 export default function Weather(props) {
   if (props.loaded)
     return (
       <div className="Weather">
-        <div className="row justify-content-center">
-          <div className="col my-col mt-4">
-            <img
-              src={`http://openweathermap.org/img/wn/${props.icon}.png`}
-              style={{ display: "block", width: 70, margin: "0 auto" }}
-              alt="{props.description}"
-            />
-          </div>
-        </div>
-        <div className="row justify-content-evenly">
-          <div className="col my-col mt-3 mb-3">
-            <div className="message">
-              <p>
-                <strong>Temperature:</strong> {Math.round(props.temperature)}℃
-              </p>
-              <p>
-                <strong>Description:</strong> {props.description}
-              </p>
-              <p>
-                <strong>Humidity:</strong> {props.humidity}%
-              </p>
-              <p>
-                <strong>Wind:</strong> {props.wind}km/h
-              </p>
+        <div className="container">
+          <h3>{props.city}</h3>
+          <h5>Friday, 13:02</h5>
+          <h5 class="capitalize font-weight-bold">{props.description}</h5>
+          <div className="row">
+            <div className="col-2 mt-2">
+              <img
+                src={`http://openweathermap.org/img/wn/${props.icon}.png`}
+                style={{ display: "block", width: 70, margin: "0 auto" }}
+                alt="{props.description}"
+              />
+            </div>
+
+            <div className="col-4 mt-2 mb-3">
+              <div className="temperature">
+                <span class="temperature">{Math.round(props.temperature)}</span>
+                <span class="unit">°C</span>
+              </div>
+            </div>
+            <div className="col-6 mt-4 mb-3">
+              <ul className="message">
+                <li>
+                  <strong>Humidity:</strong> {props.humidity}%
+                </li>
+                <li>
+                  <strong>Wind:</strong> {props.wind}km/h
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-        <div className="row justify-content-center mt-5 days">
-          <div className="col my-col">
-            <strong>Mon</strong>
-          </div>
-          <div className="col my-col">
-            <strong>Tue</strong>
-          </div>
-          <div className="col my-col">
-            <strong>Wed</strong>
-          </div>
-          <div className="col my-col">
-            <strong>Thur</strong>
-          </div>
-          <div className="col my-col">
-            <strong>Fri</strong>
-          </div>
-        </div>
-        <div className="row justify-content-center mt-1 days">
-          <div className="col my-col">22°C</div>
-          <div className="col my-col">18°C</div>
-          <div className="col my-col">24°C</div>
-          <div className="col my-col">28°C</div>
-          <div className="col my-col">22°C</div>
         </div>
       </div>
     );
