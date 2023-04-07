@@ -10,6 +10,7 @@ export default function Engine(props) {
   function handleResponse(response) {
     setWeatherData({
       loaded: true,
+      date: "Friday, 13:00",
       newCity: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,

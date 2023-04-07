@@ -2,14 +2,22 @@ import React from "react";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const { loaded, newCity, description, icon, temperature, humidity, wind } =
-    props.weatherData;
+  const {
+    loaded,
+    newCity,
+    date,
+    description,
+    icon,
+    temperature,
+    humidity,
+    wind,
+  } = props.weatherData;
   if (loaded) {
     return (
       <div className="Weather">
         <div className="container">
           <h3>{newCity}</h3>
-          <h5>Friday, 13:02</h5>
+          <h5>{date}</h5>
           <h5 class="text-capitalize font-weight-bold">{description}</h5>
           <div className="row">
             <div className="col-2 mt-2">
