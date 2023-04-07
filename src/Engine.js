@@ -6,14 +6,6 @@ import axios from "axios";
 export default function Engine(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState("props.defaultCity");
-  // const [city, setCity] = useState("props.defaultCity");
-  // const [newCity, setNewCity] = useState("");
-  // const [loaded, setLoaded] = useState(false);
-  // const [temperature, setTemperature] = useState(null);
-  // const [description, setDescription] = useState("");
-  // const [humidity, setHumidity] = useState("");
-  // const [wind, setWind] = useState("");
-  // const [icon, setIcon] = useState("");
 
   function handleResponse(response) {
     setWeatherData({
@@ -25,14 +17,6 @@ export default function Engine(props) {
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
     });
-
-    // setLoaded(true);
-    // setTemperature(response.data.main.temp);
-    // setDescription(response.data.weather[0].description);
-    // setHumidity(response.data.main.humidity);
-    // setWind(response.data.wind.speed);
-    // setIcon(response.data.weather[0].icon);
-    // setNewCity(response.data.name);
   }
 
   function handleSubmit(event) {
