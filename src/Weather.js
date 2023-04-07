@@ -6,9 +6,9 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div className="container">
-          <h3>{props.city}</h3>
+          <h3>{props.newCity}</h3>
           <h5>Friday, 13:02</h5>
-          <h5 class="capitalize font-weight-bold">{props.description}</h5>
+          <h5 class="text-capitalize font-weight-bold">{props.description}</h5>
           <div className="row">
             <div className="col-2 mt-2">
               <img
