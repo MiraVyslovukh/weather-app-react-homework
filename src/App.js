@@ -5,7 +5,7 @@ import Engine from "./Engine";
 export default function App() {
   return (
     <div className="App">
-      <Engine />
+      <Engine defaultCity="London" />
       <footer id="by">
         This project was coded by Mira Vyslovukh and is open-sourced on{" "}
         <a

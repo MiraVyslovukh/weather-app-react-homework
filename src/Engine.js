@@ -4,7 +4,7 @@ import "./Engine.css";
 import axios from "axios";
 
 export default function Engine(props) {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("props.defaultCity");
   const [newCity, setNewCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [temperature, setTemperature] = useState(null);
@@ -28,6 +28,13 @@ export default function Engine(props) {
     const API_KEY = "2980ff43226d67e53abfcdb6d457dcc8";
     let units = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${units}`;
+    axios.get(url).then(handleResponse);
+  }
+
+  if (!loaded) {
+    const API_KEY = "2980ff43226d67e53abfcdb6d457dcc8";
+    let units = "metric";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${API_KEY}&units=${units}`;
     axios.get(url).then(handleResponse);
   }
 
