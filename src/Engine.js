@@ -43,7 +43,7 @@ export default function Engine(props) {
     <div className="Engine">
       <div className="container my-container">
         <div className="row justify-content-center">
-          <div className="col my-col mt-4">
+          <div className="col my-col mt-2">
             <form onSubmit={handleSubmit}>
               <input
                 onChange={getCity}
