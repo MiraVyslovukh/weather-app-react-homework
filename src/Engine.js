@@ -4,23 +4,35 @@ import "./Engine.css";
 import axios from "axios";
 
 export default function Engine(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState("props.defaultCity");
-  const [newCity, setNewCity] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  const [temperature, setTemperature] = useState(null);
-  const [description, setDescription] = useState("");
-  const [humidity, setHumidity] = useState("");
-  const [wind, setWind] = useState("");
-  const [icon, setIcon] = useState("");
+  // const [city, setCity] = useState("props.defaultCity");
+  // const [newCity, setNewCity] = useState("");
+  // const [loaded, setLoaded] = useState(false);
+  // const [temperature, setTemperature] = useState(null);
+  // const [description, setDescription] = useState("");
+  // const [humidity, setHumidity] = useState("");
+  // const [wind, setWind] = useState("");
+  // const [icon, setIcon] = useState("");
 
   function handleResponse(response) {
-    setLoaded(true);
-    setTemperature(response.data.main.temp);
-    setDescription(response.data.weather[0].description);
-    setHumidity(response.data.main.humidity);
-    setWind(response.data.wind.speed);
-    setIcon(response.data.weather[0].icon);
-    setNewCity(response.data.name);
+    setWeatherData({
+      loaded: true,
+      newCity: response.data.name,
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      icon: response.data.weather[0].icon,
+    });
+
+    // setLoaded(true);
+    // setTemperature(response.data.main.temp);
+    // setDescription(response.data.weather[0].description);
+    // setHumidity(response.data.main.humidity);
+    // setWind(response.data.wind.speed);
+    // setIcon(response.data.weather[0].icon);
+    // setNewCity(response.data.name);
   }
 
   function handleSubmit(event) {
@@ -31,7 +43,7 @@ export default function Engine(props) {
     axios.get(url).then(handleResponse);
   }
 
-  if (!loaded) {
+  if (!weatherData.loaded) {
     const API_KEY = "2980ff43226d67e53abfcdb6d457dcc8";
     let units = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${API_KEY}&units=${units}`;
@@ -59,15 +71,7 @@ export default function Engine(props) {
             </form>
           </div>
         </div>
-        <Weather
-          newCity={newCity}
-          temperature={temperature}
-          description={description}
-          humidity={humidity}
-          wind={wind}
-          icon={icon}
-          loaded={loaded}
-        />
+        <Weather weatherData={weatherData} />
       </div>
     </div>
   );
