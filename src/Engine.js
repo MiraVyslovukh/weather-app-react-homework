@@ -5,12 +5,11 @@ import axios from "axios";
 
 export default function Engine(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city, setCity] = useState("props.defaultCity");
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
       loaded: true,
-      date: "Friday, 13:00",
       newCity: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
