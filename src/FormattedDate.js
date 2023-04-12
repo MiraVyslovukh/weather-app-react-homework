@@ -24,7 +24,7 @@ export default function FormattedDate() {
 
   return (
     <h5>
-      {day} {hours}:{minutes}
+      {day}, {hours}:{minutes}
     </h5>
   );
 }
