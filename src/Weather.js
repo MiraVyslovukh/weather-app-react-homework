@@ -16,7 +16,6 @@ export default function Weather(props) {
             <div className="col-2 mt-2">
               <img
                 src={`http://openweathermap.org/img/wn/${icon}.png`}
-                style={{ display: "block", width: 70, margin: "0 auto" }}
                 alt="{props.description}"
               />
             </div>
