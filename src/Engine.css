@@ -1,4 +1,4 @@
-.my-container {
+.Engine .my-container {
   margin-top: 25px;
   padding-left: 65px !important;
   padding-right: 65px !important;
@@ -15,7 +15,7 @@
   font-family: "Raleway", sans-serif;
 }
 
-.my-col {
+.Engine .my-col {
   /* border: 1px solid black; */
   text-align: center;
   padding: 0px 0px 0px 0px;
@@ -23,28 +23,7 @@
   margin-right: 30px;
 }
 
-.city-name,
-.temperature,
-.current-time {
-  font-size: 30px;
-}
-
-.temperature {
-  font-size: 46px;
-}
-
-.unit {
-  font-size: 13px;
-  position: relative;
-  top: -20px;
-}
-
-.unit a {
-  color: blue;
-  text-decoration: none;
-}
-
-button {
+.Engine button {
   font-size: 12px;
   color: #fff;
   background-color: #1f4270;
@@ -56,17 +35,17 @@ button {
   box-shadow: 1px 3px 5px #888888;
 }
 
-button:hover {
+.Engine button:hover {
   color: #1f4270;
   background-color: #fff;
 }
 
-input {
+.Engine input {
   font-size: 12px;
   background-color: #ebeff5;
 }
 
-.search-engine {
+.Engine .search-engine {
   border-radius: 17px;
   border: 1px solid #ebeff5;
   padding: 5px;
@@ -74,7 +53,7 @@ input {
   margin: 10px 50px;
 }
 
-.search-engine {
+.Engine .search-engine {
   width: 250px;
   margin: 0 auto;
   padding-left: 10px;

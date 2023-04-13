@@ -1,0 +1,19 @@
+.temperature {
+  font-size: 46px !important;
+}
+
+.unit {
+  font-size: 13px;
+  position: relative;
+  top: -20px;
+  margin-left: 5px;
+}
+
+a {
+  color: blue;
+  text-decoration: none !important;
+}
+
+.unselected {
+  color: rgb(83, 79, 79);
+}
