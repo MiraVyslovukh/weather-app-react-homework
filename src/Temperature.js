@@ -3,6 +3,7 @@ import "./Temperature.css";
 
 export default function Temperature(props) {
   const [unit, setUnit] = useState("celcius");
+  const temperature = props.temperature;
   function toFahrenheit(event) {
     event.preventDefault();
     setUnit("fahrenheit");
@@ -17,7 +18,7 @@ export default function Temperature(props) {
     return (
       <div className="col-4 mt-2 mb-3">
         <div className="temperature">
-          <span class="temperature">{Math.round(props.temperature)}</span>
+          <span class="temperature">{Math.round(temperature)}</span>
           <span class="unit">
             °C |{" "}
             <a href="/" className="unselected" onClick={toFahrenheit}>
@@ -28,7 +29,7 @@ export default function Temperature(props) {
       </div>
     );
   } else {
-    let fahrenheit = (props.temperature * 9) / 5 + 32;
+    let fahrenheit = (temperature * 9) / 5 + 32;
     return (
       <div className="col-4 mt-2 mb-3">
         <div className="temperature">
