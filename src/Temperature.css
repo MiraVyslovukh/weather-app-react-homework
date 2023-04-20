@@ -15,5 +15,7 @@ a {
 }
 
 .unselected {
-  color: rgb(83, 79, 79);
+  color: black;
+  font-weight: 500;
+  opacity: 0.5;
 }
