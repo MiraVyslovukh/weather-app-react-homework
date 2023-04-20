@@ -1,10 +1,10 @@
 .Engine .my-container {
   margin-top: 25px;
-  padding-left: 65px !important;
-  padding-right: 65px !important;
+  padding-left: 60px !important;
+  padding-right: 60px !important;
   padding-top: 20px;
   padding-bottom: 25px;
-  max-width: 550px !important;
+  max-width: 525px !important;
   min-height: 300px;
   background: linear-gradient(
     112.4deg,
