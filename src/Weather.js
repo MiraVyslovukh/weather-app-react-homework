@@ -14,12 +14,7 @@ export default function Weather(props) {
           <FormattedDate />
           <h5 class="text-capitalize font-weight-bold">{description}</h5>
           <div className="row">
-            <div className="col-2 mt-2">
-              <img
-                src={`http://openweathermap.org/img/wn/${icon}.png`}
-                alt="{props.description}"
-              />
-            </div>
+            <div className="col-2 mt-2">{icon}</div>
             <Temperature temperature={temperature} />
             <div className="col-6 mt-4 mb-3">
               <ul className="message">

@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import Weather from "./Weather";
 import "./Engine.css";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Engine(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [weatherData, setWeatherData] = useState({ loaded: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
       loaded: true,
+      coordinates: response.data.coord,
       newCity: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: response.data.weather[0].icon,
+      icon: (
+        <img
+          src={`https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`}
+          alt={response.data.weather[0].description}
+        />
+      ),
     });
   }
 
@@ -41,7 +48,7 @@ export default function Engine(props) {
   return (
     <div className="Engine">
       <div className="container my-container">
-        <div className="row justify-content-center">
+        <div className="row">
           <div className="col my-col mt-2">
             <form onSubmit={handleSubmit}>
               <input
@@ -56,6 +63,7 @@ export default function Engine(props) {
           </div>
         </div>
         <Weather weatherData={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     </div>
   );
